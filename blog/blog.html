@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/blog.css">
+        <link rel="icon" sizes="32x32" type="image/png" href="images/title.png" class="lazy-load">
+    <link rel="icon" sizes="192x192" href="images/title.png" class="lazy-load">
+    <link rel="apple-touch-icon" href="images/title.png" class="lazy-load" class="lazy-load">
+    <link rel="icon" sizes="32x32" href="images/title.png" class="lazy-load">
+<link rel="icon" sizes="16x16" href="images/title.png" class="lazy-load">
+  <title>Blog Pribadi</title>
+  <meta name="description" content="Template blog modern, ringan, responsif dengan dark mode, pencarian, kategori, dan tampilan artikel satu file." />
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#4f46e5" />
+  <!-- Open Graph / SEO dasar -->
+  <meta property="og:title" content="Blog Kamu — Template Modern" />
+  <meta property="og:description" content="Template blog modern, ringan, responsif dengan dark mode, pencarian, kategori, dan tampilan artikel satu file." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <button class="hamb" id="hamb" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="#" aria-label="Halaman utama">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Blog M_Zahril_Fathan</span>
+      </a>
+      <div class="nav-actions" role="toolbar" aria-label="Aksi navbar">
+        <label class="search" aria-label="Cari artikel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/></svg>
+          <input id="search" type="search" placeholder="Cari artikel... (Ctrl+/)" />
+        </label>
+        <button id="themeToggle" class="icon-btn" aria-label="Ganti tema">
+          <svg id="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg id="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:none" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Drawer mobile -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <aside class="panel" role="dialog" aria-label="Menu">
+      <a href="#" data-close>Beranda</a>
+        <a href="#kategori/Cerita" data-close>Cerita</a>
+        <a href="#kategori/Instalasi VoIP" data-close>Instalasi VoIP</a> 
+        <a href="#kategori/Website" data-close>Website</a> 
+      <hr style="border-color:var(--border); margin:1rem 0">
+      <button class="btn" id="mobileTheme" aria-label="Ganti tema">Ganti Tema</button>
+    </aside>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="headline" data-animate>Selamat datang di blog saya, tempat berbagi inspirasi dan pengalaman.</h1>
+        <p class="subtitle" data-animate>Temukan berbagai cerita, tips, dan inspirasi dalam satu tempat yang mudah dijelajahi.</p>
+
+        <div style="margin-top:1rem" data-animate>
+          <a href="#" id = "gr" class="btn btn-primary">Mulai Baca</a>
+        <a href="#tentang" class="btn">Tentang</a>
+        </div>
+      </div>
+      <div class="hero-card" data-animate>
+<strong>Mulai Menjelajah</strong>
+<ol style="margin:.75rem 0 0 1.1rem; color:var(--muted)">
+  <li>Telusuri artikel terbaru untuk inspirasi dan ide baru.</li>
+  <li>Gunakan kategori atau tag untuk menemukan topik yang kamu minati.</li>
+  <li>Bagikan catatan atau eksperimenmu sendiri lewat komentar atau form kontak.</li>
+</ol>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HOME (List Posts) ================= -->
+  <main class="container" id="homeView" hidden>
+    <div class="toolbar">
+      <div class="chips" id="chips"></div>
+      <div>
+        <button class="btn" id="clearFilters">Reset</button>
+      </div>
+    </div>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <nav class="pagination" id="pagination"></nav>
+  </main>
+
+  <!-- ================= POST (Detail) ================= -->
+  <article class="container post" id="postView" hidden>
+    <a href="#" class="btn" style="margin:1rem 0 .5rem">← Kembali</a>
+    <header>
+      <h1 id="postTitle"></h1>
+      <div class="meta" id="postMeta"></div>
+    </header>
+    <div class="cover"><img id="postCover" alt=""></div>
+    <div class="prose" id="postBody"></div>
+    <div style="margin-top:1rem; display:flex; gap:.5rem; flex-wrap:wrap" id="postTags"></div>
+    <section style="margin-top:2rem">
+      <h2>Komentar</h2>
+    </section>
+  </article>
+
+  <footer>
+    <div class="container" style="display:flex; gap:1rem; justify-content:space-between; align-items:center; flex-wrap:wrap">
+      <small>© <span id="year"></span> BlogKamu. Dibuat dengan ♥</small>
+      <div style="display:flex; gap:.5rem">
+<a href="#tentang" class="btn">Tentang</a>
+        <a class="chip" href="mailto:muhamadzahrilfathan@gmail.com?subject=Halo%20MZF!&body=Hai%20saya%20ingin%20bertanya...">Kontak</a>
+        <!-- <a class="chip" href="#rss">RSS</a> -->
+      </div>
+    </div>
+  </footer>
+
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Tentang Penulis</h2>
+<p>Halo! Saya <strong>Muhamad Zahril Fathan</strong>, penulis blog ini. NOTHING SPECIAL.</p>
+    <p>📧 <a href="mailto:muhamadzahrilfathan@gmail.com?subject=Halo%20MZF!&body=Hai%20saya%20ingin%20bertanya...">muhamadzahrilfathan@gmail.com</a></p>
+  </div>
+</div>
+
+<script src="assets/blog.js"></script>
+
+</div>
+</body>
+</html>

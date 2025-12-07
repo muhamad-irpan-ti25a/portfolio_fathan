@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyTube - Portfolio Video</title>
+<link rel="icon" type="image/png" href="images/favicon.png" class="lazy-load">
+
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://kit.fontawesome.com/a2e0e9c6d3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">My<span>Tube</span></div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Cari video..." />
+      <button id="searchBtn"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="mode-toggle" id="modeToggle">
+      <i class="fas fa-sun" id="lightIcon" style="display:none;"></i>
+      <i class="fas fa-moon" id="darkIcon"></i>
+    </div>
+  </header>
+
+  <!-- Container -->
+  <main class="video-container" id="videoContainer"></main>
+  <!-- Popup Player -->
+<div class="video-popup" id="videoPopup">
+  <span class="close-popup" id="closePopup">&times;</span>
+  <iframe id="popupVideo" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+  <script>
+  // ======== DATA VIDEO ========
+const videos = [
+  {
+    title: "Tugas Kelompok 1 Logika Informatika Materi Inferensi",
+    url: "https://www.youtube.com/embed/AA8RSPOYqYs?si=zVxpDiwaPBOxJlYu",
+    desc: "Tugas Kelompok 1 Logika Informatika Materi Inferensi."
+  },
+    {
+    title: "Kenangan Antara Kita, Upacara Hari Senin & Hujan Kala Itu.",
+    url: "https://www.youtube.com/embed/254CrY-6Q_I?si=5KAYHr8oiIa7UyEi",
+    desc: "Kenangan Sebelum Kelulusan."
+  },
+      {
+    title: "Film Pendek Tentang KETERLAMBATAN.",
+    url: "https://www.youtube.com/embed/SgG16jrXuaI?si=Z7n3HBn_07zv4HQV",
+    desc: "Karya Anak XII TKJ 1 SMK HARAPAN BANGSA BOJONGHAUR."
+  },
+        {
+    title: "Ujian Praktik Kimia Kelompok 1 XII TKj 1 SMK Harapan Bangsa.",
+    url: "https://www.youtube.com/embed/2DrCTR1ljdA?si=ISUimv5pLt3pjPFL",
+    desc: "Ujian Praktik Kimia Kelompok 1 XII TKj 1 SMK Harapan Bangsa."
+  },
+          {
+    title: "Praktik mengkafani jenazah, kelas XII TKJ 1.",
+    url: "https://www.youtube.com/embed/g2d1yoBlZLE?si=Tv6H4Eml8gh3mAhq",
+    desc: "Praktik mengkafani jenazah, kelas XII TKJ 1."
+  },
+            {
+    title: "Menguji konsep perbedaan massa jenis dan reaksi kimia dalam membuat lampu lava.",
+    url: "https://www.youtube.com/embed/d9R_ptbD0JQ?si=dWY-i1Db7XUooEUr",
+    desc: "menguji konsep perbedaan massa jenis dan reaksi kimia dalam membuat lampu lava."
+  },
+  {
+    title: "CINEMATIC.",
+    url: "https://www.youtube.com/embed/SOqHIUPYClE?si=yVqwyoUupiZ0hl7c" ,
+    desc: "CINEMATIC."
+  },
+    {
+    title: "MOTIVASI.",
+    url: "https://www.youtube.com/embed/tpth_n0kT8g?si=DMb_NjVZzC7O_tSW",
+    desc: "Motivasi Kuliah."
+  },
+    {
+    title: "LIVE CINEMATIC.",
+    url: "https://www.youtube.com/embed/rjA8FRY_Fl8?si=5r-yEOwnDax00HGB",
+    desc: "LIVE CINEMATIC."
+  },
+    {
+    title: "GALAU DIKIT.",
+    url: "https://www.youtube.com/embed/XHc0MTNd-ls?si=DelKJAoWKZs5gRWZ",
+    desc: "GALAU DIKIT."
+  },
+      {
+    title: "LIVE IN CINEMATIC.",
+    url: "https://www.youtube.com/embed/4wkqfvzy1f8?si=rh14gASjOFFzZgWL",
+    desc: "LIVE IN CINEMATIC."
+  },
+  {
+    title: "Trailer Film Pendek",
+    url: "https://www.youtube.com/embed/LfEYbrzlGvE?si=kfnazBAB0HtJFKqP",
+    desc: "Trailer Film Pendek Pengenalan Kelompok 7 [AIRONIX] HAKRAB Teknik Informatika."
+  },
+  {
+    title: "Film Pendek",
+    url: "https://www.youtube.com/embed/Xp1_Vj2ESq0?si=a7ia0gqrcZIXtF7u",
+    desc: "Film Pendek Pengenalan Kelompok 7 [AIRONIX] HAKRAB Teknik Informatika."
+  }
+];
+
+
+  // ======== GENERATE VIDEO CARD ========
+  const container = document.getElementById("videoContainer");
+
+  function renderVideos(list) {
+    container.innerHTML = "";
+    list.forEach(v => {
+      const card = document.createElement("div");
+      card.classList.add("video-card");
+      card.dataset.title = v.title;
+      card.innerHTML = `
+        <iframe src="${v.url}" frameborder="0" allowfullscreen></iframe>
+        <h3>${v.title}</h3>
+        <p>${v.desc}</p>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  renderVideos(videos);
+
+// ======== POPUP PLAYER ========
+const popup = document.getElementById("videoPopup");
+const popupVideo = document.getElementById("popupVideo");
+const closePopup = document.getElementById("closePopup");
+
+function openPopup(url) {
+  popup.classList.add("active");
+  popupVideo.src = url + "?autoplay=1";
+}
+
+function closePopupFn() {
+  popup.classList.remove("active");
+  popupVideo.src = "";
+}
+
+closePopup.addEventListener("click", closePopupFn);
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) closePopupFn();
+});
+
+// Integrasi dengan card
+function renderVideos(list) {
+  container.innerHTML = "";
+  list.forEach(v => {
+    const card = document.createElement("div");
+    card.classList.add("video-card");
+    card.innerHTML = `
+      <div class="thumbnail">
+        <iframe src="${v.url}" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>${v.title}</h3>
+      <p>${v.desc}</p>
+    `;
+    card.addEventListener("click", () => openPopup(v.url));
+    container.appendChild(card);
+  });
+}
+
+renderVideos(videos);
+
+
+
+  // ======== MODE GELAP-TERANG ========
+  const modeToggle = document.getElementById("modeToggle");
+  const body = document.body;
+  const lightIcon = document.getElementById("lightIcon");
+  const darkIcon = document.getElementById("darkIcon");
+
+  modeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    const darkMode = body.classList.contains("dark");
+    darkIcon.style.display = darkMode ? "none" : "inline";
+    lightIcon.style.display = darkMode ? "inline" : "none";
+  });
+
+  // ======== PENCARIAN VIDEO ========
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+
+  function searchVideo() {
+    const filter = searchInput.value.toLowerCase();
+    const filtered = videos.filter(v => v.title.toLowerCase().includes(filter));
+    renderVideos(filtered);
+  }
+
+  searchBtn.addEventListener("click", searchVideo);
+  searchInput.addEventListener("keyup", searchVideo);
+
+
+  </script>
+</body>
+</html>
