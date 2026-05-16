@@ -207,6 +207,51 @@ const POSTS = [
           <li>b. WEB Instagram.</li>
         `,
   },
+
+    {
+    id: "pendakian-gunung-gede",
+    title: "PENDAKIAN GUNUNG GEDE PANGRANGO SEBAGAI BENTUK AMOR CONSERVIS",
+    date: "2026-05-04",
+    author: "Muhamad Irpan",
+    category: "Bloger",
+    tags: ["WEB", "BLOGER", "GUNUNG", "PENDAKI"],
+    cover:
+      "images1/IMG_4798.jpg",
+    excerpt: "TUGAS UTS MATAKULIAH KENUSAPUTRAAN DENGAN JUDUL PENDAKIAN GUNUNG GEDE PANGRANGO SEBAGAI BENTUK AMOR CONSERVIS",
+    body: `
+        <div class="f">
+          <h2>PENDAKIAN GUNUNG GEDE PANGRANGO SEBAGAI BENTUK AMOR CONSERVIS</h2>
+          <p>NAMA: Muhamad Irpan</p>
+          <p>NIM: 20250040015</p>
+          <p>KELAS: TI25A</p>
+          <p>Trilogi Universitas Nusa Putra terdiri dari tiga nilai utama, yaitu Amor Deus (cinta kasih kepada Tuhan), Amor Parentium (cinta kasih kepada orang tua), dan Amor Concervis (cinta kasih kepada sesama manusia). Ketiga nilai tersebut menjadi pedoman bagi mahasiswa Universitas Nusa Putra dalam menjalani kehidupan sehari-hari, baik di lingkungan kampus maupun di masyarakat.</p>
+          <p>Pada tanggal 4 Mei 2026, saya bersama teman-teman melakukan kegiatan pendakian ke Gunung Gede Pangrango. Kegiatan ini bukan hanya sekadar perjalanan menikmati alam, tetapi juga menjadi pengalaman yang mengajarkan banyak hal tentang kebersamaan, kepedulian, dan rasa saling membantu antar sesama. Dari pengalaman tersebut, saya merasa bahwa kegiatan ini sangat berkaitan dengan salah satu nilai Trilogi Universitas Nusa Putra, yaitu Amor Concervis yang memiliki arti cinta kasih terhadap sesama manusia.</p>
+          <p>Pendakian gunung membutuhkan kerja sama dan rasa peduli yang tinggi. Selama perjalanan menuju puncak, kami saling membantu membawa barang, mengingatkan untuk tetap berhati-hati, serta memberi semangat ketika ada teman yang mulai merasa lelah. Medan yang cukup berat dan cuaca dingin membuat kami sadar bahwa kebersamaan sangat penting dalam sebuah perjalanan. Tidak ada yang berjalan sendiri tanpa memperhatikan kondisi teman lainnya.</p>
+          <p>Selain itu, kami juga belajar untuk saling menghargai dan menjaga satu sama lain. Ketika ada teman yang kesulitan saat melewati jalur tertentu, teman yang lain langsung membantu tanpa diminta. Hal sederhana seperti berbagi makanan, air minum, maupun membantu mendirikan tenda menjadi bentuk nyata dari rasa peduli antar sesama. Dari situ saya memahami bahwa nilai kemanusiaan tidak hanya dipelajari di dalam kelas, tetapi juga bisa diterapkan langsung dalam kehidupan sehari-hari.</p>
+          <p>Kegiatan ini juga memberikan pengalaman berharga tentang pentingnya menjaga hubungan baik dengan orang lain. Pendakian bukan hanya soal mencapai puncak, tetapi tentang bagaimana perjalanan tersebut dapat mempererat hubungan pertemanan dan menumbuhkan rasa solidaritas. Saya merasa kegiatan ini membuat kami menjadi lebih kompak dan saling memahami satu sama lain.</p>
+          <p>Menurut saya, nilai Amor Concervis sangat penting untuk diterapkan dalam kehidupan mahasiswa maupun kehidupan bermasyarakat. Dengan memiliki rasa cinta kasih terhadap sesama, kita dapat menciptakan lingkungan yang saling mendukung, menghargai, dan peduli terhadap orang lain. Pengalaman mendaki Gunung Gede Pangrango ini menjadi salah satu bukti nyata bahwa kebersamaan dan kepedulian dapat membuat perjalanan yang sulit terasa lebih ringan dan menyenangkan.</p>
+          <p>Melalui kegiatan ini, saya semakin memahami bahwa Trilogi Universitas Nusa Putra bukan hanya sekadar teori, tetapi nilai yang harus diterapkan dalam kehidupan nyata. Saya berharap nilai Amor Concervis dapat terus saya terapkan dalam kehidupan sehari-hari, baik di lingkungan kampus, keluarga, maupun masyarakat.</p>
+          <p>Dokumentasi Kegiatan Pendakian Gunung Gede Pangrango bersama teman-teman pada tanggal 4 Mei 2026.</p>
+          <div style="display:flex; justify-content:center; margin:2rem 0;">
+  <div style="width:100%; max-width:800px; aspect-ratio:16/9;">
+    <iframe 
+      width="100%" 
+      height="100%" 
+      src="https://www.youtube.com/embed/RySI5OYkArA?si=bdntHTl21NFCScO0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.2);">
+    </iframe>
+  </div>
+</div>
+          <p>Referensi</p>
+          <p>Nilai-Nilai Luhur Trilogi Universitas Nusa Putra:</p>
+          <p>https://nusaputra.ac.id/id/tentang/nilai-nilai-luhur/</p>
+          </div
+        `,
+  },
   // Tambahkan artikel lain sesuka kamu
 ];
 
