@@ -248,7 +248,7 @@ const POSTS = [
 </div>
           <p>Referensi</p>
           <p>Nilai-Nilai Luhur Trilogi Universitas Nusa Putra:</p>
-          <p>https://nusaputra.ac.id/id/tentang/nilai-nilai-luhur/</p>
+          a href="https://nusaputra.ac.id/id/tentang/nilai-nilai-luhur/"<p>https://nusaputra.ac.id/id/tentang/nilai-nilai-luhur/</p></a>
           </div
         `,
   },
